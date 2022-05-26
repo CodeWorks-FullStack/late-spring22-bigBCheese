@@ -1,5 +1,8 @@
 import { ProxyState } from "../AppState.js";
 import { itemsService } from "../Services/ItemsService.js";
+import { Pop } from "../Utils/Pop.js";
+
+// NOTE looking for the draw item? it's not here,  That is because drawing items is handled in the party template.
 
 export class ItemsController{
   constructor(){
@@ -7,6 +10,7 @@ export class ItemsController{
   }
 
 
+  // NOTE add Item takes in a party id, so it can know which party it belongs to.
   addItem(partyId){
     window.event.preventDefault()
     console.log('adding item to party', partyId);
@@ -21,7 +25,10 @@ export class ItemsController{
     itemsService.addItem(itemData)
   }
 
-  deleteItem(id){
-    itemsService.deleteItem(id)
+  // NOTE need async and await to use the pop confirm
+  async deleteItem(id){
+    if(await Pop.confirm('are you sure you want to delete this?')){
+      itemsService.deleteItem(id)
+    }
   }
 }

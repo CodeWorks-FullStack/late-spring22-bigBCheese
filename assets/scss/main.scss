@@ -31,9 +31,9 @@ body {
   min-height: 100vh;
   background-color: $danger;
   background-image: url('https://wrkhrs.co/wp-content/uploads/2020/01/wrkhrsco-mood-rats9.png');
-  background-size: 85%;
+  background-size: 85vh;
   background-repeat: no-repeat no-repeat;
-  background-position: -10% 20%;
+  background-position: 88% 5vh;
 }
 
 main {
@@ -43,8 +43,10 @@ main {
 .item-form {
   display: flex;
   justify-content: stretch;
-  width: 95%;
   padding: 1em;
 
-
+  input {
+    display: flex;
+    flex-grow: 1;
+  }
 }

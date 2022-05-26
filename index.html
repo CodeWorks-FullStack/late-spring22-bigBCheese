@@ -25,18 +25,18 @@
   <main>
     <div class="container-fluid pt-5">
       <!-- REVIEW need the nav tabs section -->
-      <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#party-tab"
-            type="button" role="tab">Parties</button>
-          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#booking-tab" type="button"
-            role="tab">New Booking</button>
-        </div>
-      </nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#party-tab" type="button"
+          role="tab">Parties</button>
+        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#booking-tab" type="button"
+          role="tab">New Booking</button>
+      </div>
+      <!-- NOTE wrap all the tab content in 'tab-content' -->
       <div class="tab-content">
         <!-- REVIEW content wrapped in tab pane -->
-        <div class="tab-pane fade show active" id="party-tab" role="tabpanel" tabindex="0">
-          <div id="parties" class="row m-2" role="tabpanel">
+        <!-- Parties Tab -->
+        <div class="tab-pane fade show active" id="party-tab" role="tabpanel">
+          <div id="parties" class="row m-2">
             <!-- Party -->
             <!-- <div class="col-md-6">
             <div class="card p-3 shadow">
@@ -58,8 +58,9 @@
             <!-- end party -->
           </div>
         </div>
-        <div class="tab-pane fade show" id="booking-tab" role="tabpanel" tabindex="0">
-          <div id="booking-form" class="row justify-content-center my-2" role="tabpanel">
+        <!-- Form tab -->
+        <div class="tab-pane fade show" id="booking-tab" role="tabpanel">
+          <div id="booking-form" class="row m-2">
             <div class="col-md-6 bg-white rounded shadow p-4">
               <h4>Book Your Party Today</h4>
               <form class="row" id="form" onsubmit="app.partiesController.bookParty()">
