@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/style/main.css">
@@ -23,65 +23,77 @@
     </nav>
   </header>
   <main>
-
-    <div class="container-fluid">
-      <div id="parties" class="row m-2" role="tabpanel">
-        <!-- Party -->
-        <!-- <div class="col-md-6">
-          <div class="card p-3 shadow">
-            <h4 class="d-flex justify-content-between">Party Title <span>party size: 5</span><i
-                class="mdi mdi-close selectable"></i></h4>
-            <form class="item-form" onsubmit="app.itemsController.addItem()">
-              <select name="type" id="type">
-                <option value="staff">staff<i class="mdi mdi-account"></i></option>
-                <option value="catering">catering<i class="mdi mdi-food"></i></option>
-                <option value="misc"> misc<i class="mdi mdi-alien"></i></option>
-              </select>
-              <input type="text" name="body" id="body" placeholder="body">
-              <input type="number" name="price" id="price" placeholder="price">
-              <button class="btn btn-primary" title="add item"> + </button>
-            </form>
-            <h4 class="text-end">Total : $500</h4>
+    <div class="container-fluid pt-5">
+      <!-- REVIEW need the nav tabs section -->
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#party-tab"
+            type="button" role="tab">Parties</button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#booking-tab" type="button"
+            role="tab">New Booking</button>
+        </div>
+      </nav>
+      <div class="tab-content">
+        <!-- REVIEW content wrapped in tab pane -->
+        <div class="tab-pane fade show active" id="party-tab" role="tabpanel" tabindex="0">
+          <div id="parties" class="row m-2" role="tabpanel">
+            <!-- Party -->
+            <!-- <div class="col-md-6">
+            <div class="card p-3 shadow">
+              <h4 class="d-flex justify-content-between">Party Title <span>party size: 5</span><i
+                  class="mdi mdi-close selectable"></i></h4>
+              <form class="item-form" onsubmit="app.itemsController.addItem()">
+                <select name="type" id="type">
+                  <option value="staff">staff<i class="mdi mdi-account"></i></option>
+                  <option value="catering">catering<i class="mdi mdi-food"></i></option>
+                  <option value="misc"> misc<i class="mdi mdi-alien"></i></option>
+                </select>
+                <input type="text" name="body" id="body" placeholder="body">
+                <input type="number" name="price" id="price" placeholder="price">
+                <button class="btn btn-primary" title="add item"> + </button>
+              </form>
+              <h4 class="text-end">Total : $500</h4>
+            </div>
+            </div> -->
+            <!-- end party -->
           </div>
-        </div> -->
-        <!-- end party -->
-      </div>
-      <div id="booking-form" class="row justify-content-center my-2" role="tabpanel">
-        <div class="col-md-6 bg-white rounded shadow p-4">
-          <h4>Book Your Party Today</h4>
-          <form class="row" id="form" onsubmit="app.partiesController.bookParty()">
-            <div class="mb-3 col-12">
-              <label for="" class="form-label">Name For Party</label>
-              <input type="text" required name="name" id="name" class="form-control" aria-describedby="helpId"
-                placeholder="">
+        </div>
+        <div class="tab-pane fade show" id="booking-tab" role="tabpanel" tabindex="0">
+          <div id="booking-form" class="row justify-content-center my-2" role="tabpanel">
+            <div class="col-md-6 bg-white rounded shadow p-4">
+              <h4>Book Your Party Today</h4>
+              <form class="row" id="form" onsubmit="app.partiesController.bookParty()">
+                <div class="mb-3 col-12">
+                  <label for="" class="form-label">Name For Party</label>
+                  <input type="text" required name="name" id="name" class="form-control" aria-describedby="helpId"
+                    placeholder="">
+                </div>
+                <div class="mb-3 col-12">
+                  <label for="" class="form-label">Size of Party</label>
+                  <input type="number" required min="5" name="size" id="size" class="form-control"
+                    aria-describedby="helpId" placeholder="">
+                </div>
+                <div class="mb-3 col-6">
+                  <label for="" class="form-label">Date</label>
+                  <input type="date" required min="2022-05-27" value="2022-05-27" name="date" id="date"
+                    class="form-control" aria-describedby="helpId" placeholder="">
+                </div>
+                <div class="mb-3 col-6">
+                  <label for="" class="form-label">Do you want Benedict The Rat?</label>
+                  <input type="checkbox" checked name="hasRat" id="hasRat" aria-describedby="helpId">
+                </div>
+                <div class="mb-3 col-12">
+                  <label for="" class="form-label">Custom Accommodations</label>
+                  <textarea name="accommodations" id="accommodations" class="form-control" aria-describedby="helpId"
+                    placeholder=""></textarea>
+                </div>
+                <button class="btn btn-danger">Book!</button>
+              </form>
             </div>
-            <div class="mb-3 col-12">
-              <label for="" class="form-label">Size of Party</label>
-              <input type="number" required min="5" name="size" id="size" class="form-control" aria-describedby="helpId"
-                placeholder="">
-            </div>
-            <div class="mb-3 col-6">
-              <label for="" class="form-label">Date</label>
-              <input type="date" required min="2022-05-27" value="2022-05-27" name="date" id="date" class="form-control"
-                aria-describedby="helpId" placeholder="">
-            </div>
-            <div class="mb-3 col-6">
-              <label for="" class="form-label">Do you want Benedict The Rat?</label>
-              <input type="checkbox" checked name="hasRat" id="hasRat" aria-describedby="helpId">
-            </div>
-            <div class="mb-3 col-12">
-              <label for="" class="form-label">Custom Accommodations</label>
-              <textarea name="accommodations" id="accommodations" class="form-control" aria-describedby="helpId"
-                placeholder=""></textarea>
-            </div>
-            <button class="btn btn-danger">Book!</button>
-          </form>
+          </div>
         </div>
       </div>
-
   </main>
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>

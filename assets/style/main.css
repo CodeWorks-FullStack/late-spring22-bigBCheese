@@ -11111,6 +11111,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.nav-link {
+  color: black;
+  background-color: red;
+}
+.nav-link:hover {
+  color: black;
+}
+
 .bg-primary {
   color: color-yiq(#1a51dd);
   background-color: #1a51dd !important;
