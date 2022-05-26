@@ -4,16 +4,47 @@
 @import "./custom.scss";
 @import "./loaders.scss";
 
+/*
+to use sass/scss run 'npm i' once in the terminal
+then run 'npm run sass' - this starts a sass server that looks for changes to the sass files and re-compiles it into css
+**/
+@mixin width($max) {
+  min-width: 0%;
+  max-width: $max;
+}
+
+.test {
+  background: blue;
+  @include width(75%);
+
+  i {
+    font-size: 20px;
+  }
+}
+
+
+
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: $body-bg;
+  background-color: $danger;
+  background-image: url('https://wrkhrs.co/wp-content/uploads/2020/01/wrkhrsco-mood-rats9.png');
+  background-size: 85%;
+  background-repeat: no-repeat no-repeat;
+  background-position: -10% 20%;
 }
 
 main {
   flex-grow: 1;
 }
 
+.item-form {
+  display: flex;
+  justify-content: stretch;
+  width: 95%;
+  padding: 1em;
 
 
+}

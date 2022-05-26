@@ -8,6 +8,7 @@
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>BigBCheese</title>
@@ -15,28 +16,71 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+    <nav class="navbar navbar-light navbar-expand bg-light text-dark no-select">
       <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">BigBCheese</span>
+        <span class="ms-2 text-danger "><b><i class="mdi mdi-cheese"></i> Big-B-Cheese</b></span>
       </a>
     </nav>
   </header>
   <main>
+
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+      <div id="parties" class="row m-2" role="tabpanel">
+        <!-- Party -->
+        <!-- <div class="col-md-6">
+          <div class="card p-3 shadow">
+            <h4 class="d-flex justify-content-between">Party Title <span>party size: 5</span><i
+                class="mdi mdi-close selectable"></i></h4>
+            <form class="item-form" onsubmit="app.itemsController.addItem()">
+              <select name="type" id="type">
+                <option value="staff">staff<i class="mdi mdi-account"></i></option>
+                <option value="catering">catering<i class="mdi mdi-food"></i></option>
+                <option value="misc"> misc<i class="mdi mdi-alien"></i></option>
+              </select>
+              <input type="text" name="body" id="body" placeholder="body">
+              <input type="number" name="price" id="price" placeholder="price">
+              <button class="btn btn-primary" title="add item"> + </button>
+            </form>
+            <h4 class="text-end">Total : $500</h4>
+          </div>
+        </div> -->
+        <!-- end party -->
+      </div>
+      <div id="booking-form" class="row justify-content-center my-2" role="tabpanel">
+        <div class="col-md-6 bg-white rounded shadow p-4">
+          <h4>Book Your Party Today</h4>
+          <form class="row" id="form" onsubmit="app.partiesController.bookParty()">
+            <div class="mb-3 col-12">
+              <label for="" class="form-label">Name For Party</label>
+              <input type="text" required name="name" id="name" class="form-control" aria-describedby="helpId"
+                placeholder="">
+            </div>
+            <div class="mb-3 col-12">
+              <label for="" class="form-label">Size of Party</label>
+              <input type="number" required min="5" name="size" id="size" class="form-control" aria-describedby="helpId"
+                placeholder="">
+            </div>
+            <div class="mb-3 col-6">
+              <label for="" class="form-label">Date</label>
+              <input type="date" required min="2022-05-27" value="2022-05-27" name="date" id="date" class="form-control"
+                aria-describedby="helpId" placeholder="">
+            </div>
+            <div class="mb-3 col-6">
+              <label for="" class="form-label">Do you want Benedict The Rat?</label>
+              <input type="checkbox" checked name="hasRat" id="hasRat" aria-describedby="helpId">
+            </div>
+            <div class="mb-3 col-12">
+              <label for="" class="form-label">Custom Accommodations</label>
+              <textarea name="accommodations" id="accommodations" class="form-control" aria-describedby="helpId"
+                placeholder=""></textarea>
+            </div>
+            <button class="btn btn-danger">Book!</button>
+          </form>
         </div>
       </div>
-    </div>
+
   </main>
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p><small>Made with 💖 by Codeworks</small></p>
-    </div>
-  </footer>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
